@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"github.com/revel/revel"
-	"../../../controllers"
+	//"github.com/SLP-KBIT/UniAca-back/app/controllers"
 )
 
 type ApiV1Contests struct {
@@ -10,6 +10,6 @@ type ApiV1Contests struct {
 }
 
 func (c ApiV1Contests) New() revel.Result {
-	r := Reponse{"new"}
-	return RenderJson(r)
+	r := Response{"new"}
+	return c.RenderJson(r)
 }

@@ -2,7 +2,8 @@ package controllers
 
 import (
 	"github.com/revel/revel"
-	"../../../utils"
+	"net/http"
+	"github.com/SLP-KBIT/UniAca-back/app/utils"
 )
 
 type ApiV1Controller struct {
@@ -25,10 +26,11 @@ func (c *ApiV1Controller) BindParams(s interface{}) error {
 func (c *ApiV1Controller) HandleBadRequestError(s string) revel.Result {
 	c.Response.Status = http.StatusBadRequest
 	r := ErrorResponse{ c.Response.Status, s }
+	return c.RenderJson(r)
 }
 
-func (c *ApiV1Controller) HandleNotFoundError(s string) revel.Result {
-	c.Response.Status = http.StatusInterNalServerError
-	r := ErrorResponse{ c.Response, s }
+func (c *ApiV1Controller) HandleInernalServerError(s string) revel.Result {
+	c.Response.Status = http.StatusInternalServerError
+	r := ErrorResponse{ c.Response.Status, s }
 	return c.RenderJson(r)
 }
