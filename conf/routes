@@ -14,6 +14,8 @@ GET     /public/*filepath                       Static.Serve("public")
 
 # API
 GET     /contests/new                            ApiV1Contests.New
+GET     /questions/get/:contestId/:num           ApiV1Questions.Get
+POST    /questions/answer/:contestId/:num        ApiV1Questions.Answer
 
 # Catch all
 *       /:controller/:action                    :controller.:action
