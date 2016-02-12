@@ -13,10 +13,12 @@ GET     /favicon.ico                            404
 GET     /public/*filepath                       Static.Serve("public")
 
 # API
-GET     /contests/new                            ApiV1Contests.New
-GET     /questions/:contestId/:num               ApiV1Questions.Get
-POST    /question/:contestId/:num                ApiV1Questions.Answer
-POST    /questions                               ApiV1Questions.Create
+GET     /api/v1/contests/new                    ApiV1Contests.New
+GET     /api/v1/questions/:contestId/:num       ApiV1Questions.Get
+POST    /api/v1/question/:contestId/:num        ApiV1Questions.Answer
+POST    /api/v1/questions                       ApiV1Questions.Create
+GET     /problems/new                           Problems.New
+POST     /problem/create                        Problems.Create
 
 # Catch all
 *       /:controller/:action                    :controller.:action
