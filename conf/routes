@@ -14,8 +14,9 @@ GET     /public/*filepath                       Static.Serve("public")
 
 # API
 GET     /api/v1/contests/new                    ApiV1Contests.New
-GET     /api/v1/questions/:contestId/:num       ApiV1Questions.Get
-POST    /api/v1/question/:contestId/:num        ApiV1Questions.Answer
+GET     /api/v1/contests/result/:attendId       ApiV1Contests.Result
+GET     /api/v1/questions/:attendId/:num        ApiV1Questions.Get
+POST    /api/v1/question/:attendId/:num         ApiV1Questions.Answer
 POST    /api/v1/questions                       ApiV1Questions.Create
 GET     /problems/new                           Problems.New
 POST     /problem/create                        Problems.Create

@@ -2,12 +2,13 @@ package main
 
 import (
 	"github.com/jinzhu/gorm"
-	"github.com/lib/pq"
-	"github.com/SLP-KBIT/UniAca-back/app/model"
+	_ "github.com/lib/pq"
+	"github.com/SLP-KBIT/UniAca-back/app/models"
 )
 
 func main() {
-	dbSql, _ := sql.Open("postgres", "user=vitamin dbname=uniaca sslmode=disable")
-	db, _ := gorm.Open("postgres", dbSql)
+	db, _ := gorm.Open("postgres", "user=vitamin dbname=uniaca sslmode=disable")
 	db.CreateTable(&models.Question{})
+	db.CreateTable(&models.Contest{})
+	db.CreateTable(&models.Attend{})
 }
